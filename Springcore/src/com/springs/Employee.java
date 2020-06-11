@@ -4,48 +4,39 @@ public class Employee {
 
 	int id;
 	String name;
-	String address;
-	
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", address=" + address
-				+ "]";
+	Address adress;
+	//constructor injection passed by constructor argument by XML via container
+	public Employee(Address adress) {
+		super();
+		this.adress = adress;
 	}
-
-	public Employee()
-	{
-		
-	}
-
 	public int getId() {
 		return id;
 	}
-
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", adress=" + adress
+				+ "]";
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getAddress() {
-		return address;
+	
+	public Address getAdress() {
+		return adress;
 	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	//Setter Injection
+	public void setAdress(Address adress) {
+		this.adress = adress;
 	}
-
-	public Employee(int id, String name, String address) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.address = address;
-	}
+	
+	
+	
 	
 }
